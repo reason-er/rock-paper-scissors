@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+  	<title>Rock, Paper, Scissors</title>
+
+<script>
+//before reading my code, forgive me in advance for writing such repetitive code. I basically murdered the DRY principle. But I will get better. Code works as planned. 
+	function computerPlay() {
+	 	options = ['rock', 'paper', 'scissors'];
+		randomChoice = options[Math.floor(Math.random()*options.length)];
+		return randomChoice;
+		console.log(randomChoice);
+	}
+	computerPlay();
+
+	game();
+
+	var options;
+	var computerRound1Score = 0;
+	var	playerRound1Score = 0;
+	var computerRound2Score = 0;
+	var	playerRound2Score = 0;
+	var computerRound3Score = 0;
+	var	playerRound3Score = 0;
+	var computerRound4Score = 0;
+	var	playerRound4Score = 0;
+	var computerRound5Score = 0;
+	var	playerRound5Score = 0;
+	var totalScoreComputer = 0;
+	var	totalScorePlayer = 0;
+	var overallScore = 0;
+	var round = [1,2,3,4,5];
+
+
+	var playerSelection;
+	var computerSelection = computerPlay();
+	var win = "You win! Rock beats Scissors";
+	var lose = "You Lose! Paper beats Rock";
+	var draw = "You tied!";
+	var winner;
+	var randomChoice;
+	var round = 0;
+ 	var playerScore;
+ 	var computerScore;
+
+	function round1(){
+		computerSelection = computerPlay();
+		playerSelection = prompt("Make your choice", "rock - paper - scissors");
+		playRound();
+		console.log(winner + " wins this round");
+		if(winner == 'computer') {
+			computerRound1Score = 1;
+			playerRound1Score = 0;
+		}
+		else if(winner == 'player') {
+			playerRound1Score = 1;
+			computerRound1Score = 0;
+		}
+		else if(winner == 'none'){
+			playerRound1Score = 0;
+			computerRound1Score = 0;
+		}
+		console.log(computerRound1Score + " : " + playerRound1Score);	
+	}
+
+	function round2(){
+		computerSelection = computerPlay();
+		playerSelection = prompt("Make your choice", "rock - paper - scissors");
+		playRound();
+		console.log(winner + " wins this round");
+		if(winner == 'computer') {
+			computerRound2Score = 1;
+			playerRound2Score = 0;
+		}
+		else if(winner == 'player') {
+			playerRound2Score = 1;
+			computerRound2Score = 0;
+		}
+
+		else if(winner == 'none'){
+			playerRound2Score = 0;
+			computerRound2Score = 0;
+		}
+		console.log(computerRound2Score + " : " + playerRound2Score);	
+	}
+
+	function round3(){
+		computerSelection = computerPlay();
+		playerSelection = prompt("Make your choice", "rock - paper - scissors");
+		playRound();
+		console.log(winner + " wins this round");
+		if(winner == 'computer') {
+			computerRound3Score = 1;
+			playerRound3Score = 0;
+		}
+		else if(winner == 'player') {
+			playerRound3Score = 1;
+			computerRound3Score = 0;
+		}
+
+		else if(winner == 'none'){
+			playerRound3Score = 0;
+			computerRound3Score = 0;
+		}
+		console.log(computerRound3Score + " : " + playerRound3Score);
+	}
+
+	function round4(){
+		computerSelection = computerPlay();
+		playerSelection = prompt("Make your choice", "rock - paper - scissors");
+		playRound();
+		console.log(winner + " wins this round");
+		if(winner == 'computer') {
+			computerRound4Score = 1;
+			playerRound4Score = 0;
+		}
+		else if(winner == 'player') {
+			playerRound4Score = 1;
+			computerRound4Score = 0;
+		}
+
+		else if(winner == 'none'){
+			playerRound4Score = 0;
+			computerRound4Score = 0;
+		}
+		console.log(computerRound4Score + " : " + playerRound4Score);	
+	}
+
+	function round5(){
+		computerSelection = computerPlay();
+		playerSelection = prompt("Make your choice", "rock - paper - scissors");
+		playRound();
+		console.log(winner + " wins this round");
+		if(winner == 'computer') {
+			computerRound5Score = 1;
+			playerRound5Score = 0;
+		}
+		else if(winner == 'player') {
+			playerRound5Score = 1;
+			computerRound5Score = 0;
+		}
+		else if(winner == 'none'){
+			playerRound5Score = 0;
+			computerRound5Score = 0;
+		}
+		console.log(computerRound5Score + " : " + playerRound5Score);
+	}
+
+	function game() {
+		round1();
+		round2();
+		round3();
+		round4();
+		round5();
+		totalScoreComputer = computerRound1Score + computerRound2Score + computerRound3Score + computerRound4Score + computerRound5Score;
+
+		totalScorePlayer =  playerRound1Score + playerRound2Score + playerRound3Score + playerRound4Score + playerRound5Score;
+
+		overallScore;
+		console.log("Overall score is: Computer - " + totalScoreComputer + " : Player - " + totalScorePlayer); 
+
+		if(totalScorePlayer == totalScoreComputer){
+			round5();
+		}
+	}
+
+	function playRound(){
+		if(computerSelection == 'paper'){
+			if(playerSelection == 'scissors') {
+				winner = 'player';
+			}
+
+			else if(playerSelection == 'rock') {
+				winner = 'computer';
+			}
+
+			else if (playerSelection == 'paper') {
+				winner = 'none';
+			}
+		}
+
+		else if(computerSelection == 'rock') {
+			if(playerSelection == 'paper') {
+				winner = 'player';
+			}
+			else if(playerSelection == 'scissors') {
+				winner = 'computer';
+			}
+			else if(playerSelection == 'rock') {
+				winner = 'none';
+			}
+		}
+
+		else if(computerSelection == 'scissors'){ 
+			if(playerSelection == 'rock') {
+				winner = 'player';
+			}
+			else if(playerSelection == 'paper') {
+				winner = 'computer';
+			}
+			else if(playerSelection == 'scissors'){
+				winner = 'none';
+			}
+		}
+
+	}
+	 	
+	
+</script>
+</head>
+
+<body>
+</body>	
+</html>	
